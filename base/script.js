@@ -114,3 +114,82 @@ if (nb) {
   msg = "Panier vide";
 }
 console.log(msg);
+
+// test if equals
+
+nb = 5;
+nb2 = "5";
+
+if (nb == nb2) {
+  // equals due to nb2 being transformed into number
+  console.log(nb + " equals " + nb2);
+}
+
+if (nb === nb2) {
+  console.log(nb + " equals " + nb2);
+} else {
+  console.log(
+    `${nb} does not equals ${nb2} because first variable is ${typeof nb} and second variable is ${typeof nb2}`
+  );
+}
+
+isMajeur = false;
+if (!isMajeur) {
+    console.log("Accès interdit due to isMajeur variable being " + isMajeur);
+}
+
+//  differences between null, false and undefined
+
+// low equality
+
+console.log(null == false); // false
+console.log(null == undefined); // true;
+
+// strict equality
+
+console.log(null === false); // false
+console.log(null === undefined); // false
+
+// assign and types 
+
+var myNull = null, myNull2nd = null;
+console.log(typeof myNull); // object
+console.log(typeof inconnu); // undefined
+console.log(myNull === myNull2nd); // true  
+
+// combining conditions
+
+a = 1, b = 2;
+console.log(`A value is ${a}`);
+console.log(`B value is ${b}`);
+
+if ((a == 1) ||  (b != 2)) {
+    console.log("A may equals " + a + "or B may be different from value " + b );
+}
+
+if ((a == 1) &&  (b != 2)) {
+    console.log("A must be equals to " + a + "and B must be different from value " + b );
+} else {
+    console.log(`Two conditions not fufilled`);
+}
+
+if ((a != 0) && (b != 1)) {
+    console.log("Its a match!");
+}
+c = 0;
+
+if ((a == 0) || (b == 2) && (c == 0)) {
+    console.log(`Matching one block conditions requirements`);
+} else {
+    console.log("Or not");
+}
+
+// starting loops
+
+var somme = 0;
+var start = 1;
+var max = 10;
+for (var n=start; n<=max; n++) {
+    console.log(somme);
+    somme++;
+}
