@@ -135,7 +135,7 @@ if (nb === nb2) {
 
 isMajeur = false;
 if (!isMajeur) {
-    console.log("Accès interdit due to isMajeur variable being " + isMajeur);
+  console.log("Accès interdit due to isMajeur variable being " + isMajeur);
 }
 
 //  differences between null, false and undefined
@@ -150,38 +150,39 @@ console.log(null == undefined); // true;
 console.log(null === false); // false
 console.log(null === undefined); // false
 
-// assign and types 
+// assign and types
 
-var myNull = null, myNull2nd = null;
+var myNull = null,
+  myNull2nd = null;
 console.log(typeof myNull); // object
 console.log(typeof inconnu); // undefined
-console.log(myNull === myNull2nd); // true  
+console.log(myNull === myNull2nd); // true
 
 // combining conditions
 
-a = 1, b = 2;
+(a = 1), (b = 2);
 console.log(`A value is ${a}`);
 console.log(`B value is ${b}`);
 
-if ((a == 1) ||  (b != 2)) {
-    console.log("A may equals " + a + "or B may be different from value " + b );
+if (a == 1 || b != 2) {
+  console.log("A may equals " + a + "or B may be different from value " + b);
 }
 
-if ((a == 1) &&  (b != 2)) {
-    console.log("A must be equals to " + a + "and B must be different from value " + b );
+if (a == 1 && b != 2) {
+  console.log("A must be equals to " + a + "and B must be different from value " + b);
 } else {
-    console.log(`Two conditions not fufilled`);
+  console.log(`Two conditions not fufilled`);
 }
 
-if ((a != 0) && (b != 1)) {
-    console.log("Its a match!");
+if (a != 0 && b != 1) {
+  console.log("Its a match!");
 }
 c = 0;
 
-if ((a == 0) || (b == 2) && (c == 0)) {
-    console.log(`Matching one block conditions requirements`);
+if (a == 0 || (b == 2 && c == 0)) {
+  console.log(`Matching one block conditions requirements`);
 } else {
-    console.log("Or not");
+  console.log("Or not");
 }
 
 // starting loops
@@ -189,7 +190,69 @@ if ((a == 0) || (b == 2) && (c == 0)) {
 var somme = 0;
 var start = 1;
 var max = 10;
-for (var n=start; n<=max; n++) {
-    console.log(somme);
-    somme++;
+for (var n = start; n <= max; n++) {
+  console.log("Somme equals " + somme + " And N equals " + n);
+  somme = somme + n;
+  console.log("Now Somme equals " + somme);
 }
+console.log(n);
+
+var birthDate = 14;
+var count = 0;
+for (count; count <= birthDate; count++) {
+  console.log("Loop until reach the end of the condition, loop number " + count);
+}
+
+var longestRun = 40;
+var count = 0;  // declare count properly
+for (count; count <= longestRun; count += 5) {
+  console.log("Run 5km longer this month, current run distance is " + count + "km.");
+}
+
+// while loops
+
+var n = 0;
+var somme = 0;
+while (somme <10) {
+    n++;
+    console.log(`N equals value ${n} And Somme equals value ${somme}`);
+    somme+=n;
+    console.log(`Adding N value (${n}) to Somme now equals ${somme}`);
+}
+console.log(`Somme now equals ${somme} and N equals ${n}`);
+
+// do while
+
+var n = 0;
+var somme = 0;
+do {
+    n++
+    somme+=n;
+} while (somme <10);
+console.log(`Loop stopped as Somme now equals ${somme}`);
+
+// functions
+
+console.log(parseInt("150.01")); // 150
+console.log(parseInt("xx333")); // NaN
+
+var startHiking = function (length, elevation, difficulty) {
+    console.log(`Lenght : ${length}, Elevation : ${elevation} d+, Difficulity : ${difficulty}`);
+} // init function specs
+
+startHiking("15 km", 3000, "easy");
+
+// using return
+
+var addNumbers = function(a,b,c) {
+    return a + b + c;
+}
+console.log("Function returns sums of A + B + C which equals " + addNumbers(1,2,3));
+
+// using ternary operator
+
+nb = 2;
+var getPuriel = function(nb) {
+    return nb>1?"s":"";
+}
+console.log("Vous avez " + nb + " article" + getPuriel(2) + " dans votre panier");
