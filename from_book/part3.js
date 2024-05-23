@@ -256,3 +256,36 @@ var getPuriel = function(nb) {
     return nb>1?"s":"";
 }
 console.log("Vous avez " + nb + " article" + getPuriel(2) + " dans votre panier");
+
+// variables scope
+
+var number = 10;
+var msg = "Hello Reunion";
+
+console.log(`Number equals ${number}`); // Hello Reunion
+console.log(`Message equals ${msg}`); // 10
+
+function getMessage() {
+    var msg = "Bonjour dans la fonction"; // variable scoped as local modifying msg
+    number++; // adding 1 to number => 11
+    console.log(`Number in the function ${number}`); // new msg
+    console.log(`Message in the function is ${msg}`); // 11
+}
+getMessage();
+
+console.log(`Number after the function is ${number}`); // 11
+console.log(`Message after the function is ${msg}`); // output remain "Hello Reunion" as the variable was declared as global
+
+// setInterval
+
+nb = 0;
+var counter = 0;
+
+const intervalId = setInterval(function() {
+    nb++;
+    console.log(nb);
+    counter++;
+    if (counter === 10) {
+        clearInterval(intervalId);
+    }
+}, 250);
