@@ -46,3 +46,30 @@ function formatDate(dt) {
     return jours[j] + " " + d + " " + mois[m] + " " + y + " " + h + ":" + i + ":" + s;
 }
 console.log(formatDate(jpi));
+
+// astrologie chinoise
+
+var animaux = ["Rat", "Boeuf", "Tigre", "Lapin", "Dragon", "Serpent", "Cheval", "Chèvre", "Singe", "Coq", "Chien", "Cochon"];
+var regYear = new RegExp("^[0-9]{4}$");
+
+function getChineseAnimal(year) {
+    if (regYear.test(year.toString())) {
+        var index = (year - 4) % 12; // 4 corresponds to the year 1900 which is the year of the Rat
+        console.log(animaux[index]);
+    } else {
+        console.log("Veuillez entrer une année valide à quatre chiffres.");
+    }
+}
+getChineseAnimal(1992);
+
+// set
+
+var date = new Date(2000, 11, 5);
+date.setFullYear(2002);
+console.log(date);
+
+// operations on dates
+
+date = new Date();
+var yesterday = new Date(date.getTime() - 24*60*60*1000);
+console.log(yesterday);
