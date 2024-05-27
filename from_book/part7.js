@@ -196,3 +196,118 @@ console.log(numbers.indexOf(3)); // return 1 as 3 is in second position
 // lastIndexOf
 
 console.log(numbers.lastIndexOf(9)); // return 5 as there are two 9 (1, 3, 5, 7, 9, 9) and the last one is in 5th position
+
+// join
+
+console.log(numbers.join("/"));
+
+// map
+
+colors = ["BLUE", "GREEN", "YELLOW"];
+console.log(colors.map(e => e.toLowerCase())); // new table with elem in lowercase
+
+// pop
+
+colors.pop(); // delete yellow
+console.log(colors);
+
+// push
+
+colors.push("grey");
+console.log(colors);
+
+// reduce
+
+var list = [2, 4, 6];
+console.log(list.reduce(function(accumulateur, valeur) {
+    console.log("Valeur de accumulateur est : "+ accumulateur);
+    console.log("Valeur de l'élément en cours de traitement est : "+ valeur);
+    return accumulateur + valeur;
+}));
+
+console.log(list.reduce(function(accumulateur, valeur) {
+    console.log("Valeur de accumulateur est : "+ accumulateur);
+    console.log("Valeur de l'élément en cours de traitement est : "+ valeur);
+    console.log(list.length);
+    return (accumulateur + valeur) / list.length;
+}));
+
+// reduceright
+
+var ints = [1,2,3,4];
+    console.log(ints.reduce(function(acc, elem) {
+        return acc + elem;
+    }));
+
+// reverse
+
+console.log(ints); // 1 2 3 4
+console.log(ints.reverse()); // 4 3 2 1
+
+// shift
+
+ints.shift(); // remove first elem
+console.log(ints); // 3 2 1 
+
+// slice
+
+console.log(ints.slice(0,2)); // return 3 2 
+
+// some
+ints = [1,3,5];
+console.log(ints.some(function(elem) {
+    return elem %2===0; // return false as none of them is pair
+})); 
+
+ints = [1,3,5,6];
+console.log(ints.some(function(elem) {
+    return elem %2===0; // return true because 6 is pair
+})); 
+
+// sort
+
+ints = [9, 3, 1, 4];
+ints.sort(); // now sorted to 1 3 4 9
+console.log(ints);
+
+// splice
+
+ints.splice(0,1, -1); // changed elem 1 to -1 because index 0 is 1
+console.log(ints);
+
+// unshift
+
+ints.unshift(0); // adds 0 in first position in the array 
+console.log(ints); // 0 -1 1 3 4 9
+
+// set
+
+var newList = new Set([1,2,3,4,4]);
+console.log(newList)
+
+console.log(newList.size);
+
+// set add
+
+newList.add(99); // add 99 in last position
+console.log(newList);
+
+// delete
+
+newList.delete(1); // now return 2 3 4 99
+console.log(newList);
+
+// clear
+
+newList.clear();
+console.log(newList);
+
+// has
+console.log(newList.has(99)); // Return false as the array is empty
+newList.add(99);
+console.log(newList);
+console.log(newList.has(99)); // Now return yes
+
+// map
+
+
