@@ -310,4 +310,11 @@ console.log(newList.has(99)); // Now return yes
 
 // map
 
+var chats = ["freddie", "leo", "chipie", "lilou"];
 
+var newChats = chats.map(myFunction);
+
+function myFunction(names) {
+  return names.toUpperCase();
+}
+console.log(newChats);

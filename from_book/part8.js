@@ -59,7 +59,127 @@ class createAnimal {
   }
 }
 
+
 var chipie = new createAnimal("chipie", "20", "european");
 console.log(chipie);
 
+// practicing classes
+
+class firemenGrades {
+  constructor(grade, category, insigne, designationcourante, appelationorale) {
+    this.grade = grade;
+    this.category = category;
+    this.insight = insigne;
+    this.designationcourante = designationcourante;
+    this.appelationorale = appelationorale;
+  }
+}
+
+var gradesCategory = ["Homme du rang", "Sous-Officier", "Officiers"];
+
+var gradeSapeur = new firemenGrades("Sapeur de 2ème classe", gradesCategory[0], "image", "Sapeur / Sapeure", "Sapeur / Sapeure");
+
+console.log(gradeSapeur);
+
+class anecdotes {
+  constructor(name, date, description){
+  this.firemenGrades = firemenGrades;
+  this.name = name;
+  this.date = date; 
+  this.description = description;
+}
+}
+
 // extends
+
+class createCat extends createAnimal {
+  constructor(name, age, bread, robe) {
+    super(name, age, bread);
+    this.robe = robe;
+  }
+}
+
+var lilou = new createCat("lilou", "9", "european", "grey");
+console.log(lilou);
+
+// access properties
+
+console.log(Object.keys(lilou));
+console.log(Object.values(lilou));
+console.log(Object.entries(lilou));
+
+// delete property
+
+delete freddie.age; // removed age entry
+console.log(freddie);
+
+// enumarable properties
+
+var tab=["Hello", "Kitty"];
+console.log(Object.keys(tab));
+console.log(Object.getOwnPropertyNames(tab));
+
+for (var index in tab) {
+  console.log(index); // output index 0 1
+}
+
+for (var index in tab) {
+  console.log(tab[index]); // output values "hello" "kitty"
+}
+
+for (var values of tab) {
+  console.log(values); // output values "hello" "kitty"
+}
+
+// change object properties
+
+var lilou = new creerChat("lilou", 20, "femelle", "non", "grey");
+
+// apply and call
+
+function Human(nom)
+{
+  this.nom=nom;
+}
+var nom;
+var languages;
+
+function Profession(nom, languages) {
+  Human.call(this, nom);
+  this.languages = languages;
+}
+
+var moi = new Profession("Julien", ["HTML, CSS, JS"]);
+
+console.log(moi);
+// json
+
+var truite = {
+  nom: "jean",
+  prenom: "valjean",
+  pouvoirs: ["premier", "deuxieme"],
+  duree: 250,
+  display: function() {
+    return "hello";
+  }
+}
+
+console.log(truite);
+console.log(truite.pouvoirs.length);
+console.log(truite.pouvoirs[1]);
+console.log(truite.display());
+
+// parse
+
+var jsonString = '{ "name": "jean", "surname": "valjean"}';
+console.log(typeof jsonString);
+jsonString = JSON.parse(jsonString);
+console.log(jsonString);
+console.log(typeof jsonString)
+
+var objectJS = { nom: "jean", prenom: "valjean"}
+console.log(typeof objectJS);
+objectJS = JSON.stringify(objectJS);
+console.log(objectJS);
+console.log(typeof objectJS);
+
