@@ -31,3 +31,48 @@ function getCours() {
 }
 
 getCours();
+
+function getUser() {
+    ajax = new XMLHttpRequest();
+
+    ajax.onload = function() {
+        console.log(this.response);
+        var response = JSON.parse(this.response)
+        console.log(response);
+        console.log(response.data);
+    }
+    url = "https://reqres.in/api/users/2";
+    ajax.open("GET", url, true);
+    ajax.send();
+}
+getUser();
+
+
+var meteoToken = "3d41416adb0a833b523493866886d0b6a4954fab2b0bb233bf334683b12f2cd3";
+
+function getMeteo() {
+    var ajax = new XMLHttpRequest();
+    ajax.onload = function() {
+        var resp = JSON.parse(this.response)
+        console.log(resp);
+
+    }
+    var url = `https://api.meteo-concept.com/api/forecast/daily?token=${meteoToken}&insee=64122`;
+    ajax.open("GET", url, true);
+    ajax.setRequestHeader("Authorization", meteoToken);
+    ajax.send();
+}
+
+getMeteo();
+
+function getDogFacts() {
+    var ajax = new XMLHttpRequest();
+    ajax.onload = function() {
+        var response = JSON.parse(this.response);
+        console.log(response);
+    }
+    var url = " https://dog-api.kinduff.com/api/facts"
+    ajax.open("GET", url, true);
+    ajax.send();
+}
+getDogFacts();
