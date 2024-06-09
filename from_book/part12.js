@@ -229,4 +229,20 @@ console.log(newDiv);
 var newDiv2 = newDiv.cloneNode(true);
 newDiv2.innerHTML = "text du div 2";
 console.log(newDiv2);
-body.appendChilde(newDiv2);
+
+var body = document.querySelector("body");
+body.appendChild(newDiv2); // ajout le newDiv2 to body
+
+// remove newDiv2 after 4 seconds
+body.removeChild(newDiv2)
+
+
+// text selection
+var selectBloc = document.getElementById("bloc");
+console.log(selectBloc);
+selectBloc = window.getSelection();
+console.log(window.getSelection().toString());
+console.log(window.getSelection());
+
+
+//
