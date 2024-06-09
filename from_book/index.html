@@ -20,6 +20,26 @@
 
     <form action="page.php" id="form1" method="post" name="monForm">
       <label for="saisie">Saisir du text :</label> <input type="text" id="saisie" name="saisie" placeholder="text by default" required="yes">
+      <input type="hidden" name="resolution" id="resolution">
+      <input type="checkbox" name="regles" id="regles" value="1" checked>
+      <input type="password" name="pass" id="pass" value="mot de passe">
+
+      Vous preferez les ?
+      <ul>
+        <li><label for="anim"></label><input type="radio" name="animal" value="chien" id="anim">Chien</li>
+          <li><input type="radio" name="animal" value="chat">Chat</li>
+          <li><input type="radio" name="animal" value="chevaux">Chevaux</li>
+          <li><input type="radio" name="animal" value="reptiles">Reptiles</li>
+      </ul>
+
+      <input type="file" name="monFichier" accept=".png" multiple>
+
+      <select name="film">
+        <option value="">Indiquez votre préférence</option>
+        <option value="comedie">Comédie</option>
+        <option value="thriller">Thriller</option>
+        <option value="aventure" disabled>Aventure</option>
+      </select>
       <input type="submit" value="Valider le formulaire"> 
     </form>
 
@@ -48,6 +68,17 @@
    pattern > to valid input with REGEX
    required > mandatory or not
   -->
+
+  <!-- buttons types
+    
+    <input type="button" value="Cliquez sur le boutton">
+    <input type="submit" value="Soumettre">
+    <input type="image" src="" alt="">
+
+    <button name="button">Cliquez sur le bouton</button>
+
+  -->
+
 
     <div class="div">Comprendre le DOM</div>
     <p id="monH1">Paragraphe 1</p>
